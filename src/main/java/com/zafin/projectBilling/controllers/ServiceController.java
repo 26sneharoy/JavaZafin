@@ -1,0 +1,7 @@
+package com.zafin.projectBilling.controllers;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ServiceController {
+}
