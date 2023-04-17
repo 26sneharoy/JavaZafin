@@ -23,7 +23,6 @@ public class ProductController {
     @RequestMapping(value = "productDetails", method = RequestMethod.POST)
     public String register(@ModelAttribute("product") Product product)
     {
-
         productRepository.save(product);
         return "login/admin";
     }
