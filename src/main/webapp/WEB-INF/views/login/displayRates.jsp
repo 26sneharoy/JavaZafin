@@ -128,7 +128,7 @@
 			<input type="text" id="rateCode" name="rateCode" required><br><br>
 
 			<label for="rate-description">Rate Description:</label>
-			<input type="textarea" id="rateDescription" name="rateDescription" required><br><br>
+			<textarea id="rateDescription" name="rateDescription" required></textarea><br><br>
 
 			<label for="rateType">Rate Type:</label>
 			<select id="rateType" name="rateType" required>
