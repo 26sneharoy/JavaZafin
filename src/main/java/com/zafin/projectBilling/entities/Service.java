@@ -1,7 +1,6 @@
 package com.zafin.projectBilling.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -27,6 +26,22 @@ public class Service {
     private boolean standAlone;
 
     private boolean mandatory;
+
+
+    @OneToOne
+    @JoinColumn(name = "rate_code")
+    private Rate rate;
+
+    @ManyToOne
+    Product product;
+
+    public Rate getRate() {
+        return rate;
+    }
+
+    public void setRate(Rate rate) {
+        this.rate = rate;
+    }
 
     public String getServiceCode() {
         return serviceCode;

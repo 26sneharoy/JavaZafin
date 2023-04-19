@@ -1,26 +1,88 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Configure Rate</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-		}
-		.container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f2f2f2;
-        }
+	<title>Customer Account Creation</title>
+	<link rel="stylesheet"  href="../resources/css/style2.css">
+</head>
+<style>
+@charset "ISO-8859-1";
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #f2f2f2;
+}
+ul{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:#AE275F;
+position:-webkit-sticky; /* Safari */
+position:sticky;
+top:0;
+}
+li{
+float:left;
+}
+li a{
+display:block;
+color:white;
+text-align:center;
+padding:14px 16px;
+text-decoration:none;
+}
+li a:hover{
+background-color:#111;
+}
 
-		form {
-			max-width: 500px;
-			margin: 0 auto;
-		}
+h1 {
+	text-align: left;
+	margin-bottom: 30px;
+	color:white;
+}
+h2{
+    text-align: center;
 
-		table {
+}
+
+form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+input[type="text"],
+select,
+textarea {
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+input[type="submit"] {
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: #AE275F;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+
+}
+
+table {
 			border-collapse: collapse;
 			width: 100%;
 			margin-bottom: 20px;
@@ -54,48 +116,26 @@
 			box-sizing: border-box;
 			font-size: 16px;
 		}
-
-		input[type="submit"] {
-			background-color: #AE275F;
-			color: #fff;
-			padding: 12px 20px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-			font-size: 16px;
-		}
-
-		input[type="submit"]:hover {
-			background-color: #AE275F;
-		}
-
 		.add-row, .remove-row {
-			background-color: #AE275F;
-			color: #fff;
-			padding: 8px 10px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-			font-size: 16px;
-			margin-right: 10px;
-		}
+        			background-color: #AE275F;
+        			color: #fff;
+        			padding: 8px 10px;
+        			border: none;
+        			border-radius: 4px;
+        			cursor: pointer;
+        			font-size: 16px;
+        			margin-right: 10px;
+        		}
 
-		.add-row:hover, .remove-row:hover {
-			background-color: #AE275F;
-		}
-		ul {
-		list-style-type: none;
-        margin: 0;
-         padding: 0;
-         overflow: hidden;
-          color: white;
-        background-color: #AE275F;
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-         top: 0;
-        }
-	</style>
-	<script>
+        		.add-row:hover, .remove-row:hover {
+        			background-color: #AE275F;
+        		}
+
+input[type="submit"]:hover {
+	background-color: black;
+}
+</style>
+<script>
 		function addRow() {
 			var table = document.getElementById("charge-quantity-table");
 			var rowCount = table.rows.length;
@@ -116,34 +156,37 @@
 			}
 		}
 	</script>
-</head>
 <body>
 
+<ul>
+<h1>Ohio Platform</h1>
+</ul>
+	<div class="container">
 
-	<div>
-		<ul><h2>Ohio Bank</h2></ul><br><br>
-		<form action="welcomeLogin" method="post">
-		<div class="container">
-			<label for="rateCode">Rate Code:</label>
-			<input type="text" id="rateCode" name="rateCode" required><br><br>
+		<h2>Rate Details</h2>
+	<form action="displayRates" method="POST">
+		<label for="rateCode">Rate Code:</label>
+		<input type="text" id="rateCode" name="rateCode">
 
-			<label for="rate-description">Rate Description:</label>
-			<textarea id="rateDescription" name="rateDescription" required></textarea><br><br>
 
-			<label for="rateType">Rate Type:</label>
-			<select id="rateType" name="rateType" required>
-				<option value="">--Select--</option>
-			<option value="one-time">One Time</option>
-			<option value="monthly">Monthly</option>
-			<option value="recurring">Recurring</option>
-		</select><br><br>
+
+		<label for="rateDescription">Rate Description:</label>
+		<textarea id="rateDescription" name="rateDescription"></textarea>
+		<label for="rateType">Rate Type:</label>
+        			<select id="rateType" name="rateType" required>
+        				<option value="">--Select--</option>
+        			<option value="one-time">One Time</option>
+        			<option value="monthly">Monthly</option>
+        			<option value="recurring">Recurring</option>
+        		</select>
+
 
 		<label for="basedOn">Based On :</label>
         			<select id="basedOn" name="basedOn" required>
                     <option value="">--Select--</option>
         			<option value="value">Value</option>
         			<option value="volume">Volume</option>
-        		</select><br><br>
+        		</select>
 
 		<label for="pricingMethodology">Pricing Methodology:</label>
 		<select id="pricingMethodology" name="pricingMethodology" required>
@@ -151,7 +194,7 @@
 			<option value="flat-absolute">Flat Absolute</option>
 			<option value="flat-rate">Flat Rate</option>
 			<option value="tiered-rate">Tiered Rate</option>
-		</select><br><br>
+		</select>
 
 		<h3>Charge Quantity Rate:</h3>
 		<table id="charge-quantity-table">
@@ -179,11 +222,11 @@
 			<button type="button" class="add-row" onclick="addRow()">Add Row</button>
 			<button type="button" class="remove-row" onclick="removeRow()">Remove Row</button>
 		</div>
-<br><br>
 
-		<input type="submit" value="Save">
-		</div>
+
+
+		<input type="submit" value="Submit">
 	</form>
-</div>
+	</div>
 </body>
 </html>

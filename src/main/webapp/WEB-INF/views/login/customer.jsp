@@ -93,41 +93,34 @@ input[type="submit"]:hover {
 </ul>
 	<div class="container">
 
-		<h2>Product Details</h2>
-	<form action="productDetails" method="POST">
-		<label for="productCode">Product Code:</label>
-		<input type="text" id="productCode" name="productCode">
+		<h2>Customer Details</h2>
+	<form action="customerDetails" method="POST">
+		<label for="customerId">Customer Id:</label>
+		<input type="text" id="customerId" name="customerId">
 
-		<label for="productName">Product Name:</label>
-		<input type="text" id="productName" name="productName">
+		<label for="customerName">Customer Name:</label>
+		<input type="text" id="customerName" name="customerName">
 
-		<label for="productDescription">Product Description:</label>
-		<textarea id="productDesc" name="productDescription"></textarea>
+		<label for="customerPhon">Phone Number :</label>
+		<textarea id="customerPhon" name="customerPhon"></textarea>
 
-		<label for="productOwner">Product Owner:</label>
-		<input type="text" id="productOwner" name="productOwner">
+		<label>Email Id :</label>
+		<input type="text" >
 
-		<label for="openingDate">Opening Date:</label>
-		<input type="date" id="openingDate" name="productOpeningDate">
-
-		<label for="validityDate">Validity Date:</label>
-		<input type="date" id="validityDate" name="productValidityDate">
-
-		<label for="expiryDate">Expiry Date:</label>
-		<input type="date" id="expiryDate" name="productExpiryDate">
+			<label>Address:</label>
+        		<input type="text" >
 
 
+		<label > Date of joining :</label>
+		<input type="date">
 
-		<label for="currency">Currency:</label>
-		<select id="currency" name="productCurrency">
-			<option value="USD">USD</option>
-			<option value="EUR">EUR</option>
-			<option value="GBP">GBP</option>
-			<option value="JPY">JPY</option>
-		</select>
+		<label for="account"> Account </label>
 
-		<label for="productRates">Product Level Rates:</label>
-		<input type="text" id="productRates" name="productLevelRate">
+        			<select name="account">
+        			<c:forEach items="${accountLists}" var="accounts">
+        			<option value="${accounts.accountNumber}">${accounts.accountNumber}</option>
+        			</c:forEach>
+                    </select>
 
 		<input type="submit" value="Submit">
 	</form>

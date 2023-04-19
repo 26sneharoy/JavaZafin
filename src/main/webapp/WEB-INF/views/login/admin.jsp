@@ -183,7 +183,7 @@
     				</div>
 
     				<div class="card">
-    					<a href="create_rates.html">
+    					<a href="showLogin">
     							<i class="fas fa-plus"></i>
     							<h3>Create Rates</h3>
     							<p>Add a new rate to the list</p>

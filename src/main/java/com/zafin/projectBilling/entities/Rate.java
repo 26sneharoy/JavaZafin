@@ -2,6 +2,9 @@ package com.zafin.projectBilling.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+
+import java.util.Arrays;
 
 @Entity
 public class Rate {
@@ -13,6 +16,16 @@ public class Rate {
     private String rateType;
     private String pricingMethodology;
 
+
+    private String basedOn;
+
+    private double[] rateValue;
+    private int[] min;
+    private int[] max;
+
+
+
+
     public String getBasedOn() {
         return basedOn;
     }
@@ -20,12 +33,6 @@ public class Rate {
     public void setBasedOn(String basedOn) {
         this.basedOn = basedOn;
     }
-
-    private String basedOn;
-
-    private double[] rateValue;
-    private int[] min;
-    private int[] max;
 
     public double[] getRateValue() {
         return rateValue;
@@ -53,6 +60,21 @@ public class Rate {
 
     public String getRateCode() {
         return rateCode;
+    }
+
+    @Override
+    public String toString() {
+        return "Rate{" +
+                "rateCode='" + rateCode + '\'' +
+                ", rateDescription='" + rateDescription + '\'' +
+                ", rateType='" + rateType + '\'' +
+                ", pricingMethodology='" + pricingMethodology + '\'' +
+                ", basedOn='" + basedOn + '\'' +
+                ", rateValue=" + Arrays.toString(rateValue) +
+                ", min=" + Arrays.toString(min) +
+                ", max=" + Arrays.toString(max) +
+
+                '}';
     }
 
     public void setRateCode(String rateCode) {
