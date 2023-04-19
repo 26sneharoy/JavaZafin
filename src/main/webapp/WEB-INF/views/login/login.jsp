@@ -99,11 +99,11 @@
 
     <body>
 
-    <ul><h1>Ohio Bank</h1>
+    <ul><h1>Ohio Platform</h1>
     </ul>
     <div class="container">
     <h1>Bank Login</h1>
-    <form action ="/projectBilling/showLogin"method="post">
+    <form action ="/projectBilling/adminPage"method="post">
     <label for="userid">User ID</label>
     <input type="text" id="userid" name="userid" placeholder="Enter your User ID" required>
     <br><br>

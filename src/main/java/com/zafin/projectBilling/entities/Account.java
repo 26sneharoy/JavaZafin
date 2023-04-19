@@ -1,12 +1,12 @@
 package com.zafin.projectBilling.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Account {
+
     @Id
     private String accountNumber;
     private String accountType;
@@ -40,4 +40,3 @@ public class Account {
         this.product = product;
     }
 }
-

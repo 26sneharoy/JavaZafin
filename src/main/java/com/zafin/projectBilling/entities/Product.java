@@ -1,9 +1,9 @@
 package com.zafin.projectBilling.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -25,6 +25,22 @@ public class Product {
     private String productCurrency;
 
     private int productLevelRate;
+
+    @ManyToMany
+    @JoinTable(
+            name = "product_service",
+            joinColumns = @JoinColumn(name = "product_code"),
+            inverseJoinColumns = @JoinColumn(name = "service_code"))
+
+    private List<Service> services;
+
+    public List<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Service> services) {
+        this.services = services;
+    }
 
     public int getProductLevelRate() {
         return productLevelRate;

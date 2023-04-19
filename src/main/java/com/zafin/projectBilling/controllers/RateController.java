@@ -15,13 +15,13 @@ public class RateController {
 
     @RequestMapping("/showLogin")
     public String showRegistrationPage(){
-        return "login/displayRates";
+        return "login/rate";
     }
 
     @RequestMapping(value = "/displayRates" ,method = RequestMethod.POST)
     public String showRatePage(@ModelAttribute("rate")Rate rate){
         rateRepository.save(rate);
-        return "/login/welcomeLogin";
+        return "/login/admin";
     }
 
 

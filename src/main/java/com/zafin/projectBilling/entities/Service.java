@@ -1,9 +1,7 @@
 package com.zafin.projectBilling.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -29,9 +27,8 @@ public class Service {
     private boolean standAlone;
 
     private boolean mandatory;
-
     @OneToOne
-    @JoinColumn(name="rate_code")
+    @JoinColumn(name = "rate_code")
     private Rate rate;
 
     public Rate getRate() {
@@ -121,7 +118,4 @@ public class Service {
     public void setMandatory(boolean mandatory) {
         this.mandatory = mandatory;
     }
-
-
-
 }
