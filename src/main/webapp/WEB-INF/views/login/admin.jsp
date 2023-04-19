@@ -175,7 +175,7 @@
     				</div>
 
     				<div class="card">
-    					<a href="view_services.html">
+    					<a href="getServices">
     							<i class="fas fa-eye"></i>
     							<h3>View Services</h3>
     							<p>View all services in the list</p>

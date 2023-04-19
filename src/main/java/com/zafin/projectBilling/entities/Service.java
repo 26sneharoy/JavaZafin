@@ -1,7 +1,7 @@
 package com.zafin.projectBilling.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
