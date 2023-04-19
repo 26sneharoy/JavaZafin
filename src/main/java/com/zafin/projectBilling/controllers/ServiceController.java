@@ -1,6 +1,5 @@
 package com.zafin.projectBilling.controllers;
 
-import com.zafin.projectBilling.entities.Rate;
 import com.zafin.projectBilling.entities.Service;
 import com.zafin.projectBilling.repositories.RateRepository;
 import com.zafin.projectBilling.repositories.ServiceRepository;
@@ -32,7 +31,17 @@ public class ServiceController {
     @RequestMapping(value = "serviceDetails", method = RequestMethod.POST)
     public String register(@ModelAttribute("service") Service service)
     {
+
         serviceRepository.save(service);
         return "login/admin";
     }
+
+    @RequestMapping("/getServices")
+    public String listServices(Model model) {
+       List<Service> services = serviceRepository.findAll();
+        model.addAttribute("services", services);
+        return "login/servicesList";
+    }
+
+
 }
