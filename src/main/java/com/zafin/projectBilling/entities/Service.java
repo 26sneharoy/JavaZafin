@@ -27,6 +27,17 @@ public class Service {
     private boolean standAlone;
 
     private boolean mandatory;
+    @OneToOne
+    @JoinColumn(name = "rate_code")
+    private Rate rate;
+
+    public Rate getRate() {
+        return rate;
+    }
+
+    public void setRate(Rate rate) {
+        this.rate = rate;
+    }
 
     public String getServiceCode() {
         return serviceCode;

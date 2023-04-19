@@ -1,5 +1,6 @@
 package com.zafin.projectBilling.controllers;
 
+import com.zafin.projectBilling.entities.Rate;
 import com.zafin.projectBilling.entities.Service;
 import com.zafin.projectBilling.repositories.RateRepository;
 import com.zafin.projectBilling.repositories.ServiceRepository;
