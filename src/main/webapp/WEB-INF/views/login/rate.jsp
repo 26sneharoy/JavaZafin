@@ -191,9 +191,8 @@ input[type="submit"]:hover {
 		<label for="pricingMethodology">Pricing Methodology:</label>
 		<select id="pricingMethodology" name="pricingMethodology" required>
 			<option value="">--Select--</option>
-			<option value="flat-absolute">Flat Absolute</option>
-			<option value="flat-rate">Flat Rate</option>
-			<option value="tiered-rate">Tiered Rate</option>
+			<option value="whole-tiered">Whole Tiered</option>
+			<option value="progressive-tiered">Progressive Tiered</option>
 		</select>
 
 		<h3>Charge Quantity Rate:</h3>

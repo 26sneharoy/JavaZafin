@@ -1,4 +1,5 @@
 package com.zafin.projectBilling.controllers;
+import com.itextpdf.text.DocumentException;
 import com.zafin.projectBilling.dtos.Transaction;
 import com.zafin.projectBilling.repositories.TransactionRepository;
 import com.zafin.projectBilling.services.TransactionService;
@@ -11,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 @Controller
@@ -30,7 +28,7 @@ public class TransactionController {
         }
 
         @RequestMapping(value = "/fileread" ,method = RequestMethod.POST)
-        public String readTransactionFile(@RequestParam("fileInput") MultipartFile file, Model theModel){
+        public String readTransactionFile(@RequestParam("fileInput") MultipartFile file, Model theModel) throws DocumentException, FileNotFoundException {
             List<Transaction> transactionList = new ArrayList<>();
 
             try {
