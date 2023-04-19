@@ -17,6 +17,22 @@ public class Transaction {
 
         private String productCode;
         private String  serviceCode;
+
+        @Override
+        public String toString() {
+                return "Transaction{" +
+                        "transactionId='" + transactionId + '\'' +
+                        ", customerCode='" + customerCode + '\'' +
+                        ", accountNumber='" + accountNumber + '\'' +
+                        ", productCode='" + productCode + '\'' +
+                        ", serviceCode='" + serviceCode + '\'' +
+                        ", volume=" + volume +
+                        ", value=" + value +
+                        ", transactionDate='" + transactionDate + '\'' +
+                        ", processDate='" + processDate + '\'' +
+                        '}';
+        }
+
         private double volume;
         private double value;
         private String transactionDate;

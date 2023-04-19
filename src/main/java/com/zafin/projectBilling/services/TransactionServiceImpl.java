@@ -4,61 +4,54 @@ import com.zafin.projectBilling.dtos.Transaction;
 import com.zafin.projectBilling.dtos.Transaction;
 import com.zafin.projectBilling.entities.Rate;
 import com.zafin.projectBilling.repositories.*;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.swing.text.Document;
+
 @Service
 public class TransactionServiceImpl implements TransactionService {
 
     @Autowired
-    RateRepository rateRepository;
+     private RateRepository rateRepository;
 
     @Autowired
-    ServiceRepository serviceRepository;
+    private ServiceRepository serviceRepository;
 
     @Autowired
     ProductRepository productRepository;
     @Autowired
-    AccountRepository accountRepository;
+     AccountRepository accountRepository;
 
     @Autowired
-    CustomerRepository customerRepository;
+     CustomerRepository customerRepository;
 
 
     @Override
+    @Transactional
     public double pricing(Transaction transaction) {
-        if (serviceRepository.existsById(transaction.getServiceCode())) {
-            com.zafin.projectBilling.entities.Service service;
-            service = serviceRepository.findByServiceCode(transaction.getServiceCode());
-            if (productRepository.existsById(transaction.getProductCode())) {
-                if (accountRepository.existsById(transaction.getAccountNumber())) {
-                    if (customerRepository.existsById(transaction.getCustomerCode())) {
+
+        if(customerRepository.existsById(transaction.getCustomerCode())){
+            if(accountRepository.existsById(transaction.getAccountNumber())) {
+                if (productRepository.existsById(transaction.getProductCode())) {
+                    if (serviceRepository.existsById(transaction.getServiceCode())) {
+                        com.zafin.projectBilling.entities.Service service= serviceRepository.findByServiceCode(transaction.getServiceCode());
                         Rate rate = service.getRate();
                         String parameter = rate.getBasedOn();
                         if (parameter.equals("volume")) {
                             double volume = transaction.getVolume();
-                            if (rate.getPricingMethodology().equals("wholeTier")) {
-                                WholeTier(rate, volume);
-                            }
-                        } else {
+                            WholeTier(rate, volume);
 
                         }
 
-                    } else {
-                        System.out.println("Invalid Customer Code");
-                    }
-                } else {
-                    System.out.println("Invalid Account Number");
-                }
-            } else {
-                System.out.println("Invalid Product Code");
-            }
-        } else {
-            System.out.println("Invalid Service Code");
-        }
-        return 0;
+           }}}}
+
+   return 0;
     }
 
     private void WholeTier(Rate rate, double volume) {
+
         int[] min = rate.getMin();
         int[] max = rate.getMax();
         double[] rateValue = rate.getRateValue();
@@ -69,5 +62,10 @@ public class TransactionServiceImpl implements TransactionService {
                 System.out.println("price :"+(rateValue[i]*volume)/100);
             }
         }
+    }
+    public void pdfGeneration()
+    {
+
+
     }
 }
