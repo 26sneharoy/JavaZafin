@@ -214,6 +214,14 @@
                         </a>
                     </div>
 
+                    <div class="card">
+                        					<a href="readTransaction">
+                        						<i class="fas fa-upload"></i>
+                        						<h3>Upload Transaction file</h3>
+                        						<p>Uploading a new transaction file</p>
+                        					</a>
+                        				</div>
+
     			</div>
     		</div>
     	</main>
