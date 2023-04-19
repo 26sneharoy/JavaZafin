@@ -39,14 +39,6 @@ public class TransactionController {
                 while ((str = in.readLine()) != null) {
                     String[] tValue = str.split(",");
                     Transaction transaction = new Transaction(tValue[0],tValue[1],tValue[2],tValue[3],tValue[4],(Double.parseDouble(tValue[5])),(Double.parseDouble(tValue[6])),tValue[7]);
-//                    transaction.setTransactionId(tValue[0]);
-//                    transaction.setCustomerCode(tValue[1]);
-//                    transaction.setAccountNumber(tValue[2]);
-//                    transaction.setProductCode(tValue[3]);
-//                    transaction.setServiceCode(tValue[4]);
-//                    transaction.setValue(Double.parseDouble(tValue[5]));
-//                    transaction.setVolume(Double.parseDouble(tValue[6]));
-//                    transaction.setProcessDate(tValue[7]);
                     transactionList.add(transaction);
 
                 }
