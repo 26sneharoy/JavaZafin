@@ -39,6 +39,7 @@ public class ProductController {
     @RequestMapping(value = "productDetails", method = RequestMethod.POST)
     public String register(@ModelAttribute("product") Product product, Model theModel, @RequestParam("services") String[] selectedServices)
     {
+
         List<Service> serviceLists =new ArrayList<>();
         List<Service> serviceList = serviceRepository.findAll();
 
@@ -54,5 +55,12 @@ public class ProductController {
 
         productRepository.save(product);
         return "login/admin";
+    }
+
+    @RequestMapping("/getProducts")
+    public String listProducts(Model model) {
+        List<Product> products = productRepository.findAll();
+        model.addAttribute("products", products);
+        return "login/productsList";
     }
 }

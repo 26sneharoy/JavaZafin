@@ -35,4 +35,11 @@ public class CustomerController {
         customerRepository.save(customer);
         return "login/admin";
     }
+
+    @RequestMapping("/getCustomers")
+    public String listCustomers(Model model) {
+        List<Customer> customers = customerRepository.findAll();
+        model.addAttribute("customers", customers);
+        return "login/customersList";
+    }
 }

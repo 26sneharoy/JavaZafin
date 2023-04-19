@@ -159,7 +159,7 @@
     				</div>
 
     				<div class="card">
-    					<a href="view_products.html">
+    					<a href="getProducts">
     						<i class="fas fa-eye"></i>
     						<h3>View Products</h3>
     						<p>View all products in the catalog</p>
@@ -191,12 +191,29 @@
     				</div>
 
     				<div class="card">
-    					<a href="view_customers.html">
+                        					<a href="createCustomer">
+                        						<i class="fas fa-plus"></i>
+                        						<h3>Create Customer </h3>
+                        						<p>Add a new Customer</p>
+                        					</a>
+                        				</div>
+
+    				<div class="card">
+    					<a href="getCustomers">
     						<i class="fas fa-eye"></i>
     						<h3>View Customers</h3>
     						<p>View all customers in the database</p>
     					</a>
     				</div>
+
+    				<div class="card">
+                        <a href="createAccount">
+                             <i class="fas fa-plus"></i>
+                             <h3>Create Account </h3>
+                             <p>Add a new Account</p>
+                        </a>
+                    </div>
+
     			</div>
     		</div>
     	</main>

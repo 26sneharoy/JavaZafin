@@ -116,6 +116,27 @@ input[type="submit"]:hover {
 		<label for="expiryDate">Expiry Date:</label>
 		<input type="date" id="expiryDate" name="productExpiryDate">
 
+		<script>
+        function validateDates() {
+          var openingDate = new Date(document.getElementById("openingDate").value);
+          var validityDate = new Date(document.getElementById("validityDate").value);
+          var expiryDate = new Date(document.getElementById("expiryDate").value);
+
+          if (openingDate >= validityDate || openingDate >= expiryDate) {
+            alert("Opening date should be before validity and expiry dates.");
+            return false;
+          }
+
+          if (validityDate >= expiryDate) {
+            alert("Validity date should be before expiry date.");
+            return false;
+          }
+
+          return true;
+        }
+        </script>
+
+
 		<label for="currency">Currency:</label>
 		<select id="currency" name="productCurrency">
 			<option value="USD">USD</option>
@@ -133,7 +154,7 @@ input[type="submit"]:hover {
               </c:forEach>
               </label>
 
-		<input type="submit" value="Submit">
+		<input type="submit" value="Submit" onclick="return validateDates()">
 	</form>
 	</div>
 </body>

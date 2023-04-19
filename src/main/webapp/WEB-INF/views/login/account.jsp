@@ -92,7 +92,7 @@ input[type="submit"]:hover {
 <h1>Ohio Platform</h1>
 </ul>
 	<div class="container">
-	<h2>Service Information</h2>
+	<h2>Account Information</h2>
 	<form action="accountDetails" method="POST">
 
 			<label for="accountNumber">Account Number :</label>
