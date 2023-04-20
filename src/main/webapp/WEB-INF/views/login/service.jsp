@@ -96,31 +96,31 @@ input[type="submit"]:hover {
 	<form action="serviceDetails" method="POST">
 
 			<label for="serviceCode">Service Code:</label>
-			<input type="text" name="serviceCode">
+			<input type="text" name="serviceCode" required>
 
 
 			<label for="serviceName">Service Name:</label>
-			<input type="text" name="serviceName">
+			<input type="text" name="serviceName" required>
 
 
 			<label for="serviceDescription">Service Description:</label>
-			<textarea name="serviceDescription"></textarea>
+			<textarea name="serviceDescription" required></textarea>
 
 
 			<label for="serviceOwner">Service Owner:</label>
-			<input type="text" name="serviceOwner">
+			<input type="text" name="serviceOwner" required>
 
 
 			<label for="serviceOpeningDate">Opening Date:</label>
-			<input type="date" name="serviceOpeningDate">
+			<input type="date" name="serviceOpeningDate" required>
 
 
 			<label for="serviceValidityDate">Validity Date:</label>
-			<input type="date" name="serviceValidityDate">
+			<input type="date" name="serviceValidityDate" required>
 
 
 			<label for="serviceExpiryDate">Expiry Date:</label>
-			<input type="date" name="serviceExpiryDate">
+			<input type="date" name="serviceExpiryDate" required>
 
 
 			<label for="serviceCurrency">Currency:</label>
@@ -133,7 +133,7 @@ input[type="submit"]:hover {
 
 
 			<label for="standAlone">Standalone service:</label>
-			<select name="standAlone" >
+			<select name="standAlone" required>
 				<option value="">--Please select--</option>
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
@@ -148,7 +148,7 @@ input[type="submit"]:hover {
             </select>
 
 			<label for="mandatory">Mandatory service:</label>
-			<select name="mandatory" >
+			<select name="mandatory" required>
 				<option value="">--Please select--</option>
 				<option value="yes">Yes</option>
 				<option value="no">No</option>

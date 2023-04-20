@@ -96,23 +96,23 @@ input[type="submit"]:hover {
 		<h2>Customer Details</h2>
 	<form action="customerDetails" method="POST">
 		<label for="customerId">Customer Id:</label>
-		<input type="text" id="customerId" name="customerId">
+		<input type="text" id="customerId" name="customerId" required>
 
 		<label for="customerName">Customer Name:</label>
-		<input type="text" id="customerName" name="customerName">
+		<input type="text" id="customerName" name="customerName" required>
 
 		<label for="customerPhon">Phone Number :</label>
-		<textarea id="customerPhon" name="customerPhon"></textarea>
+		<textarea id="customerPhon" name="customerPhon" required></textarea>
 
 		<label>Email Id :</label>
-		<input type="text" >
+		<input type="text" required>
 
 			<label>Address:</label>
-        		<input type="text" >
+        		<input type="text" required>
 
 
 		<label > Date of joining :</label>
-		<input type="date">
+		<input type="date" required>
 
 		<label for="account"> Account </label>
 

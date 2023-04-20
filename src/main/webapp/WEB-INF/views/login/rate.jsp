@@ -166,12 +166,12 @@ input[type="submit"]:hover {
 		<h2>Rate Details</h2>
 	<form action="displayRates" method="POST">
 		<label for="rateCode">Rate Code:</label>
-		<input type="text" id="rateCode" name="rateCode">
+		<input type="text" id="rateCode" name="rateCode" required>
 
 
 
 		<label for="rateDescription">Rate Description:</label>
-		<textarea id="rateDescription" name="rateDescription"></textarea>
+		<textarea id="rateDescription" name="rateDescription" required></textarea>
 		<label for="rateType">Rate Type:</label>
         			<select id="rateType" name="rateType" required>
         				<option value="">--Select--</option>

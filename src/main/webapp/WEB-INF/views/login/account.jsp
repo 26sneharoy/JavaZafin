@@ -96,11 +96,11 @@ input[type="submit"]:hover {
 	<form action="accountDetails" method="POST">
 
 			<label for="accountNumber">Account Number :</label>
-			<input type="text" name="accountNumber">
+			<input type="text" name="accountNumber" required>
 
 
 			<label for="accountType">Account Type:</label>
-			<input type="text" name="accountType">
+			<input type="text" name="accountType" required>
 
 
 			<label for="product"> Products</label>

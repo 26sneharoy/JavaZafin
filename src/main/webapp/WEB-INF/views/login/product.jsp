@@ -96,25 +96,25 @@ input[type="submit"]:hover {
 		<h2>Product Details</h2>
 	<form action="productDetails" method="POST">
 		<label for="productCode">Product Code:</label>
-		<input type="text" id="productCode" name="productCode">
+		<input type="text" id="productCode" name="productCode" required>
 
 		<label for="productName">Product Name:</label>
-		<input type="text" id="productName" name="productName">
+		<input type="text" id="productName" name="productName" required>
 
 		<label for="productDescription">Product Description:</label>
-		<textarea id="productDesc" name="productDescription"></textarea>
+		<textarea id="productDesc" name="productDescription" required></textarea>
 
 		<label for="productOwner">Product Owner:</label>
-		<input type="text" id="productOwner" name="productOwner">
+		<input type="text" id="productOwner" name="productOwner" required>
 
 		<label for="openingDate">Opening Date:</label>
-		<input type="date" id="openingDate" name="productOpeningDate">
+		<input type="date" id="openingDate" name="productOpeningDate" required>
 
 		<label for="validityDate">Validity Date:</label>
-		<input type="date" id="validityDate" name="productValidityDate">
+		<input type="date" id="validityDate" name="productValidityDate" required>
 
 		<label for="expiryDate">Expiry Date:</label>
-		<input type="date" id="expiryDate" name="productExpiryDate">
+		<input type="date" id="expiryDate" name="productExpiryDate" required>
 
 		<script>
         function validateDates() {
@@ -138,7 +138,7 @@ input[type="submit"]:hover {
 
 
 		<label for="currency">Currency:</label>
-		<select id="currency" name="productCurrency">
+		<select id="currency" name="productCurrency" required>
 			<option value="USD">USD</option>
 			<option value="EUR">EUR</option>
 			<option value="GBP">GBP</option>
@@ -150,7 +150,7 @@ input[type="submit"]:hover {
 
 		<label for="serviceRequired">Service Required:</label><br/>
             <c:forEach var="service" items="${serviceList}">
-            <label><input type="checkbox" name="services" value="${service.serviceCode}"><span>"${service.serviceName}"</span>
+            <label><input type="checkbox" name="services" value="${service.serviceCode}" ><span>"${service.serviceName}"</span>
               </c:forEach>
               </label>
 
